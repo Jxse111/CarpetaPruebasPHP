@@ -113,6 +113,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         print "\$b vale $b y es de tipo " . gettype($b);
         ?> 
 
+        <?php
+        //Ejemplo para saber si la variable creada esta definida o no esta definida y como eliminarle el valor para que ya no este definida
+        $a = "3.1416";
+
+        if (isset($a)) // la variable $a está definida
+            unset($a); //ahora ya no está definida
+        ?> 
+        <p>Ejemplo de creación de constantes</p>
+        <?php
+        define("PI", 3.1416);
+        print "El valor de PI es " .PI; //El identificador se reconoce tanto por PI como por pi
+        ?>
 
 
     </body>
