@@ -25,25 +25,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         $resultado_entero = $num_1 + (int) $num_2;
         echo $resultado_entero;
         ?>
-        <p>Creamos una funcion que nos va a devolver el valor del numero 3
-            que sera el mismo que el numero 1(global) que es el que hemos creado mas arriba.</p>
-        <?php
-
-        function prueba() {
-            global $num_1;
-            $num_3 = $num_1;
-            echo $num_3;
-        }
-
-        echo prueba();
-
-        //Creamos una funcion con un numero estatico el cual se va a ejecutar la primera vez que la llamemos y lo incrementara cada que vez que se ejecute la funcion.
-        function prueba_2() {
-            static $num_contador = 0;
-            $num_contador++;
-            echo $num_contador;
-        }
-        ?>
         <p>Ejecutamos la funcion prueba 2 para ver el numero incrementandose.</p>
         <?php
         echo prueba_2();
@@ -123,9 +104,44 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <p>Ejemplo de creación de constantes</p>
         <?php
         define("PI", 3.1416);
-        print "El valor de PI es " .PI; //El identificador se reconoce tanto por PI como por pi
+        print "El valor de PI es " . PI; //El identificador se reconoce tanto por PI como por pi
         ?>
+        <p>Creamos una funcion que nos va a devolver el valor del numero 3
+            que sera el mismo que el numero 1(global) que es el que hemos creado mas arriba.</p>
+        <?php
 
+        function prueba() {
+            global $num_1;
+            $num_3 = $num_1;
+            echo $num_3;
+        }
+
+        echo prueba();
+
+        //Creamos una funcion con un numero estatico el cual se va a ejecutar la primera vez que la llamemos y lo incrementara cada que vez que se ejecute la funcion.
+        function prueba_2() {
+            static $num_contador = 0;
+            $num_contador++;
+            echo $num_contador;
+        }
+        ?>
+        
+        <p>Ejemplo de una funcion dentro de una condición y como se puede observar, no podemos llamar a la funcion antes del condicional ya que no la encuentra porque el condicional no se ha ejecutado.<p/>
+        <?php
+        $iva = true;
+        $precio = 10;
+        precio_con_iva();               // Da error, pues aquí aún no está definida la función
+        if ($iva) {
+
+            function precio_con_iva() {
+                global $precio;
+                $precio_iva = $precio * 1.18;
+                print "El precio con IVA es " . $precio_iva;
+            }
+
+        }
+        precio_con_iva();               // Aquí ya no da error
+        ?>
 
     </body>
 </html>
