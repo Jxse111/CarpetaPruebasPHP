@@ -174,5 +174,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <?php
         print_r($modulo2["Nombre"]);
         ?>
+        <br>
+        <p>Array mezclado</p>
+        <?php
+        $modulo3 = ["Nombre" => "José", "Pepe", "Como", "Verbo" => "estás"];
+        print_r($modulo3);
+        ?>
+        <p>Los valores del array se pueden sobreescribir en cualquier momento, por ejemplo vamos a borrar el valor como, por González</p>
+        <?php
+        $modulo3[1] = "González";
+        print_r($modulo3);
+        ?>
+        <p>Ejemplo de foreach con arrays en php</p>
+        <?php
+        //Para recorrer arrays SOLO se deben recorrer con for each, pero no el foreach que conocemos de Java sino este foreach
+        /* foreach ($array as $valorIterador) {
+         * echo $valoriterador;
+          } */
+        foreach ($modulo2 as $iterador) {
+            echo sprintf("%s  ", $iterador);
+        }
+        ?>
     </body>
 </html>
