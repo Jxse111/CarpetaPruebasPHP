@@ -185,7 +185,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         $modulo3[1] = "González";
         print_r($modulo3);
         ?>
-        <p>Ejemplo de foreach con arrays en php</p>
+        <p>Ejemplo de foreach con arrays en php solo valor</p>
         <?php
         //Para recorrer arrays SOLO se deben recorrer con for each, pero no el foreach que conocemos de Java sino este foreach
         /* foreach ($array as $valorIterador) {
@@ -193,6 +193,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
           } */
         foreach ($modulo2 as $iterador) {
             echo sprintf("%s  ", $iterador);
+        }
+        ?>
+        <p>Ejemplo de foreach con arrays en php clave y valor</p>
+        <?php
+        foreach ($modulo2 as $cadaClave => $cadaValor) {
+            echo sprintf("%s: %s,  ", $cadaClave,$cadaValor);
         }
         ?>
     </body>
