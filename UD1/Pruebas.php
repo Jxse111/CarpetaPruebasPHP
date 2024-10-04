@@ -125,12 +125,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             echo $num_contador;
         }
         ?>
-        
+
         <p>Ejemplo de una funcion dentro de una condición y como se puede observar, no podemos llamar a la funcion antes del condicional ya que no la encuentra porque el condicional no se ha ejecutado.<p/>
         <?php
         $iva = true;
         $precio = 10;
-        precio_con_iva();               // Da error, pues aquí aún no está definida la función
+//        precio_con_iva();               // Da error, pues aquí aún no está definida la función
         if ($iva) {
 
             function precio_con_iva() {
@@ -142,6 +142,37 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         }
         precio_con_iva();               // Aquí ya no da error
         ?>
-
+        <p>Ejemplo de include_once:</p>
+        <?php
+//        print "Asignatura $asignatura1 del ciclo $modulo1";       //Aqui dara error porque no he hecho la llamada al fichero
+        include_once './ficheros/definiciones.php';
+        print "Asignatura $asignatura1 del ciclo $modulo1";
+        ?>
+        <br>
+        <p>Ejemplo de creacion de arrays:</p>
+        <?php
+        // array numérico
+        $modulo1 = array(1, 2, 3, 4, 5);
+        $modulo2 = [2, 4, 6, 8];
+        print_r($modulo2); //Única forma ,para mostar arrays 
+        ?>
+        <br>
+        <p>Ejemplo de array con cadena de texto</p>
+        <?php
+        $modulo2 = ["Hola mundo", "Bienvenido", "¿Que tal tu día?"];
+        print_r($modulo2); //Única forma ,para mostar arrays 
+        ?>
+        <br>
+        <p>Ejemplo de array asociativo</p>
+        <?php
+        //array asociativo
+        $modulo2 = ["Nombre" => "José", "Primer apellido" => "Martínez", "Segundo apellido" => "Estrada"];
+        print_r($modulo2); //Única forma ,para mostar arrays 
+        ?>
+        <br>
+        <p>Ejemplo de devolución de valor pasando el nombre de la clave:</p>
+        <?php
+        print_r($modulo2["Nombre"]);
+        ?>
     </body>
 </html>
